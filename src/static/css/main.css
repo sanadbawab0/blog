@@ -17,3 +17,14 @@ body{
     text-align: right;
 }
 
+.bg-secondary{
+    background-color: #666 !important;
+}
+.bg-light{
+    background-color: #CCC !important;
+}
+
+.post{
+    border: 1px solid #CCC;
+}
+
