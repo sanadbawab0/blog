@@ -42,7 +42,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">من انا</a>
+                <a class="nav-link" href="{% url 'about' %}">من أنا</a>
               </li>
             </ul>
             
@@ -66,23 +66,11 @@
           <div class="col-md-4">
             <div class="card mb-3">
               <h3 class="text-center bg-secondary text-light p-2">آخر التدوينات</h3>
-              <ul>
-                <li><a href="#">التدوينة الأولى</a></li>
-                <li><a href="#">التدوينة الثانية</a></li>
-                <li><a href="#">التدوينة الثالثة</a></li>
-                <li><a href="#">التدوينة الرابعة</a></li>
-                <li><a href="#">التدوينة الخامسة</a></li>
-              </ul>
+                {% include 'blog/latest_posts.html' %}
             </div>
             <div class="card mb-3">
               <h3 class="text-center bg-secondary text-light p-2">آخر التعليقات</h3>
-              <ul>
-                <li><a href="#">التعليق الأول</a></li>
-                <li><a href="#">التعليق الثاني</a></li>
-                <li><a href="#">التعليق الثالث</a></li>
-                <li><a href="#">التعليق الرابع</a></li>
-                <li><a href="#">التعليق الخامس</a></li>
-              </ul>
+              {% include 'blog/latest_comments.html' %}
             </div>
           </div>
         </div>
@@ -96,7 +84,7 @@
             <div class="card-group mt-3">
               <div class="card m-3">
                 <h3 class="card-title text-center border-bottom p-2 m-3">
-                  من انا</>
+                  من أنا</>
                   <div class="text-center">
                     <div class="card-body">
                       <img src="{% static 'images/icon.png' %}" alt="شعار مدونة" width="100px">
