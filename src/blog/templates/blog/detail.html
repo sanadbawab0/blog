@@ -7,9 +7,18 @@
     <div class="post p-3 mb-3">
         <img class="img-fluid rounded-circle border m-2" width="70px" src="{{post.author.profile.image.url}}" alt="صورة الناشر">
         <span class = "text-secondary">نشر في {{post.post_date | date:'d-m-Y'}}</span>
+        <!--Button of editing-->
+        {% if post.author == user %}
+        <div class="form-group btn-editing">
+            <a class="btn btn-secondary" href="{% url 'post-update' post.id %}">تحرير</a>
+            <a class="btn btn-danger" href="{% url 'post-delete' post.id %}">حذف</a>
+        </div>
+        {% endif %}
         <h3>{{post.title}}</h3>
         <p>{{post.content}}</p>
     </div>
+
+    <!--Display Comments-->
         <h2 class="border-bottom mt-5 mb-3" >التعليقات {{comments.count}}</h2>
         {% for comment in comments %}
         <ul class="p-3 comment">

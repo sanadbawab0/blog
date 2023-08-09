@@ -6,6 +6,7 @@ from blog.models import Post
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
+
 # Create your views here.
 
 def register(request):
