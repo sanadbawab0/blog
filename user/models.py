@@ -5,8 +5,10 @@ from PIL import Image
 
 # Create your models here.
 
+
 class Profile(models.Model):
-    image = models.ImageField(default = 'user-default.png', upload_to = 'profile_pics', verbose_name= "صورة الملف الشخصي")
+    image = models.ImageField(default='user-default.png',
+                              upload_to='profile_pics', verbose_name="صورة الملف الشخصي")
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -18,12 +20,13 @@ class Profile(models.Model):
         img = Image.open(self.image.path)
 
         if img.width > 300 or img.height > 300:
-            img.thumbnail((300,300))
+            img.thumbnail((300, 300))
             img.save(self.image.path)
 
 
 def create_profile(sender, **kwarg):
     if kwarg['created']:
         Profile.objects.create(user=kwarg['instance'])
+
 
 post_save.connect(create_profile, sender=User)
