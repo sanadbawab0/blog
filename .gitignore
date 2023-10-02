@@ -1,0 +1,15 @@
+db.sqlite3
+
+media/
+
+__pycache__/
+
+migrations/
+
+Lib/
+/Include/
+
+admin/
+/staticfiles/
+images/
+
